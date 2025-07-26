@@ -1,0 +1,26 @@
+# Core dependencies (already required)
+PyMuPDF>=1.23.0
+scikit-learn>=1.3.0
+numpy>=1.24.0
+Pillow>=10.0.0
+
+# LayoutLMv3 dependencies (for enhanced multimodal analysis)
+transformers>=4.30.0
+torch>=2.0.0
+torchvision>=0.15.0
+
+# Optional GPU support (if CUDA available)
+# torch[cuda] - uncomment if using GPU
+
+# Image processing for LayoutLMv3
+opencv-python>=4.8.0
+
+# Additional ML dependencies for enhanced features
+datasets>=2.14.0
+tokenizers>=0.13.0
+
+# Development and testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+black>=23.7.0
+flake8>=6.0.0

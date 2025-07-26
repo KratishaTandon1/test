@@ -1,0 +1,60 @@
+# Docker ignore file for AMD64 compliance
+# Exclude development and cache files to keep image size down
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Documentation (reduce size)
+*.md
+!README.md
+
+# Large development files
+requirements-layoutlmv3.txt
+
+# Build artifacts
+*.log
+*.tmp
+
+# Exclude any GPU-specific files
+*cuda*
+*gpu*
