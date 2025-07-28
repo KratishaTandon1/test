@@ -8,8 +8,8 @@ RUN echo "[Build] Updating apt and installing build dependencies..."
 COPY requirements.txt .
 
 RUN echo "[Build] Installing Python dependencies..."
-#RUN pip install --no-cache-dir --upgrade pip && \
-    RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
 
 # -------- Stage 2: Final Image --------
 FROM --platform=linux/amd64 python:3.11-slim
