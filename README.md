@@ -21,18 +21,25 @@ A modular PDF text analysis and extraction system that processes PDF documents t
 
 1. **Build the Docker image:**
    ```bash
-   docker build -t text-analyser .
+   docker build --platform linux/amd64 -t mysolutionname:somerandomidentifier .
    ```
 
 2. **Prepare your files:**
    - Create an `input` directory in your project folder
-   - Place PDF files you want to analyze in the `input` directory
+   - Place PDF files you want to analyze in the `input` directory (PDF files should process within 10 seconds for 50 pages)
    - Create an `output` directory for results
 
 3. **Run the container:**
    ```bash
-   docker run -v "${PWD}/input:/app/input" -v "${PWD}/output:/app/output" text-analyser      
+   docker run --rm -v $(pwd)/input:/app/input -v $(pwd)/output:/app/output --network none mysolutionname:somerandomidentifier
    ```
+
+Note: The container will:
+- Process all PDFs from `/app/input` directory automatically
+- Generate `filename.json` in `/app/output` for each `filename.pdf`
+- Complete processing within 10 seconds for a 50-page document
+- Run in isolated network mode for security
+- Clean up automatically after execution (--rm flag)
 
 ## Project Structure
 
@@ -78,7 +85,7 @@ If you prefer to run without Docker:
 1. Create a virtual environment:
    ```bash
    python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   source venv/bin/activate  
    ```
 
 2. Install dependencies:
